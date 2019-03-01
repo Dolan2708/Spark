@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>classifer</groupId>
+	<artifactId>classifier</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-core_2.11</artifactId>
+		    <version>2.3.2</version>
+		</dependency>	
+
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-mllib_2.11</artifactId>
+		    <version>2.3.2</version>
+		    <!--<scope>runtime</scope>-->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib-local
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-mllib-local_2.11</artifactId>
+		    <version>2.3.2</version>
+		</dependency>
+		-->
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming
+		 <dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming_2.11</artifactId>
+		    <version>2.3.2</version>
+		</dependency>
+		-->
+	</dependencies>
+
+	<build>
+		<defaultGoal>clean package</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
